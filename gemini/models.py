@@ -3,6 +3,7 @@ from PIL import Image
 import requests
 import os
 import time
+from storage import read_history, save_history
 
 class GeminiHandler:
     def __init__(self, model_name="gemini-1.5-flash"):
@@ -49,7 +50,6 @@ class GeminiHandler:
         response = requests.get(video_url)
         video_content = BytesIO(response.content)
         
-        # Save video temporarily
         temp_path = "temp_video.mp4"
         with open(temp_path, "wb") as f:
             f.write(video_content.getbuffer())
