@@ -43,7 +43,7 @@ class GeminiHandler:
     def _process_image(self, prompt, image_url):
         response = requests.get(image_url)
         image = Image.open(BytesIO(response.content))
-        model = GenerativeModel("gemini-pro-vision")
+        model = GenerativeModel("gemini-1.5-pro")
         response = model.generate_content([prompt, image])
         return response.text
 
@@ -57,7 +57,7 @@ class GeminiHandler:
             
         video_file = None
         try:
-            model = GenerativeModel("gemini-pro-vision")
+            model = GenerativeModel("gemini-1.5-pro")
             video_file = genai.upload_file(path=temp_path)
             
             while video_file.state.name == "PROCESSING":
