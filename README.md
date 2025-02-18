@@ -11,7 +11,6 @@ This is a Flask application that interacts with the Google Gemini API, providing
 
 ## Requirements
 
-- Python 3.7 or higher
 - Flask
 - Google Generative AI SDK
 - Requests
@@ -25,14 +24,17 @@ This is a Flask application that interacts with the Google Gemini API, providing
    git clone https://github.com/yourusername/gemini-api-interface.git
    cd gemini-api-interface
   ` ` `
+
 2. **install the requirements**
-    ` ` `bash
+    ```bash
     pip install -r requirements.txt
    ` ` `
+    
 3. **setting environment valuebles**
     - create a '.env' file and paste the following make sure to replace with your actual API key from 
     - https://ai.google.dev/gemini-api/docs?utm_source=gfd&utm_medium=referral&utm_campaign=ai_logo_garden&utm_content
+  
 4. **running the application**
-     ` ` `bash
-      python
+     ```bash
+      python app.py
      ` ` `
