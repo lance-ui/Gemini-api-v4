@@ -68,7 +68,6 @@ class GeminiHandler:
             response = model.generate_content([video_file, prompt], request_options={"timeout": 900})
             return response.text
         finally:
-            # Clean up
             if os.path.exists(temp_path):
                 os.remove(temp_path)
             if video_file:
