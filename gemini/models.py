@@ -3,7 +3,7 @@ from PIL import Image
 import requests
 import os
 import time
-from storage import read_history, save_history
+from .storage import read_history, save_history
 
 class GeminiHandler:
     def __init__(self, model_name="gemini-1.5-flash"):
