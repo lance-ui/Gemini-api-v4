@@ -31,6 +31,9 @@ This is a Flask application that interacts with the Google Gemini API, providing
 3. **setting environment valuebles**
     - create a '.env' file and paste the following make sure to replace with your actual API key from 
     - https://ai.google.dev/gemini-api/docs?utm_source=gfd&utm_medium=referral&utm_campaign=ai_logo_garden&utm_content
+    ```bash
+      GEMINI_API_KEY=your_api_key_here
+      PORT=5001
   
 4. **running the application**
      ```bash
