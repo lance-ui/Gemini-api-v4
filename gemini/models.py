@@ -5,6 +5,7 @@ import os
 import time
 from .storage import read_history, save_history
 from io import BytesIO
+import google.generativeai as genai
 
 class GeminiHandler:
     def __init__(self, model_name="gemini-1.5-flash"):
