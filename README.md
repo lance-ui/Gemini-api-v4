@@ -21,8 +21,8 @@ This is a Flask application that interacts with the Google Gemini API, providing
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/gemini-api-interface.git
-   cd gemini-api-interface
+   git clone https://github.com/lance-ui/Gemini-api-v4
+   cd Gemini-api-v4
 
 2. **install the requirements**
     ```bash
