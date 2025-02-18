@@ -23,12 +23,10 @@ This is a Flask application that interacts with the Google Gemini API, providing
    ```bash
    git clone https://github.com/yourusername/gemini-api-interface.git
    cd gemini-api-interface
-  ` ` `
 
 2. **install the requirements**
     ```bash
     pip install -r requirements.txt
-   ` ` `
     
 3. **setting environment valuebles**
     - create a '.env' file and paste the following make sure to replace with your actual API key from 
@@ -37,4 +35,3 @@ This is a Flask application that interacts with the Google Gemini API, providing
 4. **running the application**
      ```bash
       python app.py
-     ` ` `
