@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Gemini API Interface</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1a73e8;
+      --secondary: #0d47a1;
+      --accent: #00c853;
+      --background: #121212;
+      --surface: #1e1e1e;
+      --text: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header{
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      flex: 1;
+    }
+
+    header {
+      background: var(--surface);
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+
+    .btn:hover {
+      background: var(--secondary);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn i {
+      font-size: 1.2rem;
+    }
+
+    footer {
+      background: var(--surface);
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 2px solid var(--primary);
+    }
+
+    .social {
+      margin-bottom: 1rem;
+    }
+
+    .social-icon {
+      color: white;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+      margin: 0 0.5rem;
+    }
+
+    .social-icon:hover {
+      color: #1877f2;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Gemini API Interface</h1>
+      <p>Version 4.0 | Powered by Google Gemini AI</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <div class="card">
+        <h3><i class="fas fa-comment"></i> Chat Endpoint</h3>
+        <p>Interactive conversation with Gemini 1.5 Flash model</p>
+        <a href="/gemini?query=hi&uid=1" class="btn">
+          <i class="fas fa-terminal"></i> Test Chat
+        </a>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-image"></i> Image Analysis</h3>
+        <p>Vision processing with Gemini 1.5 Pro model</p>
+        <a href="/gemini/vision?query=describe&url=https://ajiro.gleeze.com/api/art?prompt=A%20cat%20with%20a%20collar%20and%20the%20tag%20is%20Ace&type=image" class="btn">
+          <i class="fas fa-camera"></i> Test Image
+        </a>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-video"></i> Video Analysis</h3>
+        <p>Video processing with Gemini 1.5 Pro model</p>
+        <a href="/gemini/vision?query=describe&url=https://imgur.com/puZ9AjZ&type=video" class="btn">
+          <i class="fas fa-play"></i> Test Video
+        </a>
+      </div>
+
+      <div class="card">
+        <h3><i class="fas fa-robot"></i> Character Chat</h3>
+        <p>Custom personality interactions with system prompts</p>
+        <a href="/gemini/character?query=hi&uid=1&systemPrompt=you are a cat" class="btn">
+          <i class="fas fa-magic"></i> Test Character
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="social">
+      <a href="https://www.facebook.com/lanceq2e" target="_blank" class="social-icon">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </div>
+    <p>&copy; <span id="currentYear"></span> Gemini API Interface. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
