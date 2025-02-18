@@ -55,6 +55,7 @@ class GeminiHandler:
         with open(temp_path, "wb") as f:
             f.write(video_content.getbuffer())
             
+        video_file = None
         try:
             model = GenerativeModel("gemini-pro-vision")
             video_file = genai.upload_file(path=temp_path)
