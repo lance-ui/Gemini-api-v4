@@ -2,7 +2,7 @@ from google.generativeai import GenerativeModel
 from PIL import Image
 import requests
 import os
-import time
+import time 
 from .storage import read_history, save_history
 from io import BytesIO
 import google.generativeai as genai
@@ -50,6 +50,7 @@ class GeminiHandler:
 
     def _process_video(self, prompt, video_url):
         response = requests.get(video_url)
+        time.sleep(5)
         video_content = BytesIO(response.content)
         
         temp_path = "temp_video.mp4"
